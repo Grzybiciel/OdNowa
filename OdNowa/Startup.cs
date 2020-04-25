@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using OdNowa.Middlewares;
 
 namespace OdNowa
 {
@@ -36,6 +37,16 @@ namespace OdNowa
             }
 
             app.UseRouting();
+
+            //przykladowy middleware
+            //dokleja do odpowiedzi naglowek http
+            app.Use(async (context, c) =>
+            {
+                context.Response.Headers.Add("IndexNumber", "s18445");
+                await c.Invoke();
+            });
+
+            app.UseMiddleware<CustomMiddleware>();
 
             app.UseAuthorization();
 

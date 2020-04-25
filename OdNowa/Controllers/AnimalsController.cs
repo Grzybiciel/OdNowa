@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace OdNowa.Controllers
 {
-    [Route("api/animals]")]
+    [Route("api/animals")]
     [ApiController]
     public class AnimalsController : ControllerBase
     {
