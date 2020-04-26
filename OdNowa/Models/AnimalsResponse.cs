@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace OdNowa.Models
 {
-    public class GetAnimalRequest
+    public class AnimalsResponse
     {
         public string Name { get; set; }
         public string Type { get; set; }
